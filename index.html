@@ -1,0 +1,57 @@
+---
+layout: page
+title: xspectrolum spectral system
+excerpt: "Documentation of xSpectre xspectrolum spectral system"
+image: rainfall-delta_3B43_trmm_2001-2016_mk-z-ts-model
+search_omit: true
+---
+
+<h1>A brewing project</h1>
+
+The xspectrolum spectral system is a project for acquiring and analysing spectral data, developed with xSpecre's <a href='https://www.environimagine.com/spectrometerv080.html'>xSpectrometer<b>+</b></a> in mind.
+
+When writing this, 14 january 2024, the system conists of 4 different projects on GitHub:
+
+<ol>
+  <li><a href='https://karttur.github.io/soil-spectro/'>Soil spectral libraries</a> a public online set of turorials with open data for analysing soil spectra using Machine Learning,</li>
+  <li><a href='https://github.com/karttur/xspectrolum_v01rB/'>xspectrolum_v01rB</a> a private repo for the firmware of the <a href='https://www.environimagine.com/spectrometerv080.html'>xSpectrometer<b>+</b></a></li>
+  <li><a href='https://github.com/karttur/xspectrolum01p-mojjang_pydev/'>xspectrolum01p-mojjang_pydev</a> a private repo with the python code that accessesing the <a href='https://www.environimagine.com/spectrometerv080.html'>xSpectrometer<b>+</b></a> through a usb interface, and</li>
+  <li><a href='https://github.com/karttur/xspectrolum01superproj/'>xspectrolum01superproj</a> a privare superproject repo with 20 provate submodules (repos) for managing spectral campaigns.</li>
+</ol>
+
+<h2>Soil spectral libraries</h2>
+
+This stanad alone blog is a short hands-on training for working with the Open Soil Spectral Library (OSSL) and other spectral data. The intention is to integrate data from the <a href='https://www.environimagine.com/spectrometerv080.html'>xSpectrometer<b>+</b></a> in the library and thus model soil properties based on spectra from the <a href='https://www.environimagine.com/spectrometerv080.html'>xSpectrometer<b>+</b></a>.
+
+<h2>xspectrolum_v01rB</h2>
+
+The repo <a href='https://github.com/karttur/xspectrolum_v01rB/'>xspectrolum_v01rB</a> is the development site for the firnmware for version 0.81 of the <a href='https://www.environimagine.com/spectrometerv080.html'>xSpectrometer<b>+</b></a>. It is a private repo.
+
+<h2>xspectrolum01p-mojjang_pydev</h2>
+
+The repo <a href='https://github.com/karttur/xspectrolum01p-mojjang_pydev/'>xspectrolum01p-mojjang_pydev</a> is for development of the python code that sends and receive information to the xspectrolum_v01rB firmware. It is a private repo.
+
+<h2>xspectrolum01superproj</h2>
+
+The superproject repo <a href='https://github.com/karttur/xspectrolum01superproj/'>xspectrolum01superproj</a> is an umbrella project/repo for 20 submodules/repos (each constituting a Python package) that is intended to be the starting point for buidling the user system for managing, capturing and analyzing spectral data using the <a href='https://www.environimagine.com/spectrometerv080.html'>xSpectrometer<b>+</b>. Both the superproject and all the submodules are private repos. The post <a href='http://localhost:4000/xspectrolum-setup/speclib-setup_03-superproject/'>Spectral system setup: 3. Super project structure</a> in this blog lists all the submodules belonging to the superproject.
+
+<h1>Setup<h1>
+<ul class="post-list">
+{% for post in site.categories.xspectrolum-setup reversed %}
+  <li><article><a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>{% if post.excerpt %} <span class="excerpt">{{ post.excerpt | remove: '\[ ... \]' | remove: '\( ... \)' | markdownify | strip_html | strip_newlines | escape_once }}</span>{% endif %}</a></article></li>
+{% endfor %}
+</ul>
+
+<h1>Setup OLD<h1>
+<ul class="post-list">
+{% for post in site.categories.speclib-setup reversed %}
+  <li><article><a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>{% if post.excerpt %} <span class="excerpt">{{ post.excerpt | remove: '\[ ... \]' | remove: '\( ... \)' | markdownify | strip_html | strip_newlines | escape_once }}</span>{% endif %}</a></article></li>
+{% endfor %}
+</ul>
+
+<h1>Project<h1>
+<ul class="post-list">
+{% for post in site.categories.speclib-project reversed %}
+  <li><article><a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>{% if post.excerpt %} <span class="excerpt">{{ post.excerpt | remove: '\[ ... \]' | remove: '\( ... \)' | markdownify | strip_html | strip_newlines | escape_once }}</span>{% endif %}</a></article></li>
+{% endfor %}
+</ul>
